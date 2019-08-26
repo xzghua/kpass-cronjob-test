@@ -10,6 +10,6 @@ RUN cd /go/src/${BUILDPATH} && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install 
 
 FROM alpine:latest
 
-COPY --from=build-env /go/bin/ttest /go/bin/kpass-cronjob-test
+COPY --from=build-env /go/bin/kpass-cronjob-test /go/bin/kpass-cronjob-test
 WORKDIR /go/bin/
 CMD ["/go/bin/kpass-cronjob-test"]
